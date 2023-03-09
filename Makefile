@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/03/09 15:04:45 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/03/09 20:05:45 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,9 @@ PATH_LIB = libft
 
 SRC = $(PATH_SRC)/ft_parsing.c\
 	  $(PATH_SRC)/ft_utils.c\
+	  $(PATH_SRC)/ft_init_lst.c\
+	  $(PATH_SRC)/ft_swap.c\
+	  $(PATH_SRC)/ft_push.c\
 	  $(PATH_SRC)/main.c\
 
 LIB = $(PATH_LIB)/libft.a

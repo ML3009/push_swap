@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/03 13:36:21 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/09 20:00:22 by mvautrot         ###   ########.fr       */
+/*   Created: 2023/03/09 20:05:02 by mvautrot          #+#    #+#             */
+/*   Updated: 2023/03/09 20:21:47 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../include/push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_push_a(t_lst	*stack_a, t_lst *stack_b, int i)
 {
-	t_vars	var;
-	t_lst	*stack_a;
-	t_lst	*stack_b;
+	int	tmp;
+	t_lst *save_a;
+	t_lst *save_b;
 
-	stack_a = NULL;
-	stack_b = NULL;
-	if (ac < 2)
-		ft_putstr_exit("Error : Wrong number of argument\n");
-	ft_parsing(ac, av, &var);
-	ft_init_stack(&var, &stack_a, &stack_b);
-	ft_stack_move(stack_a, stack_b);
+	save_a = stack_a;
+	save_b = stack_b;
 
-	return(0);
+	if (stack_a->next && stack_b->next)
+	{
+		tmp = stack_a->content;
+		save_a = stack_a->next;
+		ft_add_front_lst(tmp, stack_b);
+		//value a stock tmp;
+		//content->next est egal au debut de la pile.
+		//addfront pile b
+	}
+
 }
 
+void	ft_push_b(t_lst *stack_a, t_lst *stack_b, int i)
+{
+
+}
