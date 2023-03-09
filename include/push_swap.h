@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/08 18:08:07 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/09 13:28:44 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ typedef	struct s_vars
 
 
 void	ft_check_number(char *av);
-void	ft_check_double(t_vars *var);
+void	ft_init_tab(t_vars *var);
+
 void	ft_init(t_vars *var);
+void	ft_putstr_exit(char *str);
+int	ft_check_double(int	*tab, int i, t_vars *var);
 
 #endif
