@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 14:13:06 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/09 13:40:47 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/09 14:26:56 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,16 @@ int	ft_check_double(int	*tab, int i, t_vars *var)
 {
 	int	j;
 	j = i + 1;
-	ft_printf("i : [%i] ||| ", tab[i]);
-	ft_printf("j : [%i]\n", tab[j]);
-	if (i == var->size)
+	if (i == var->size - 1)
 		return(1);
-	while (tab[j])
+	while (j < var->size)
 	{
-		if (tab[i] == tab[j++])
-			ft_putstr_exit("Error : Double !\n");;
+		if (tab[i] == tab[j])
+			ft_putstr_exit("Error : Double !\n");
+		j++;
 	}
 	ft_check_double(tab, i + 1, var);
-	return(1);
+	return (1);
 }
 
 
