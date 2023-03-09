@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 09:01:53 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/09 17:04:20 by mvautrot         ###   ########.fr       */
+/*   Created: 2023/03/09 14:38:28 by mvautrot          #+#    #+#             */
+/*   Updated: 2023/03/09 14:38:45 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
-t_list	*ft_lstnew(int content)
+void	ft_putstr_exit(char *str)
 {
-	t_list	*element;
-
-	element = malloc(sizeof(t_list));
-	if (!element)
-		return (NULL);
-	element->content = content;
-	element->next = NULL;
-	return (element);
+	ft_putstr_fd(str, 2);
+	exit(EXIT_FAILURE);
 }

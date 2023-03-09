@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 16:27:10 by mvautrot          #+#    #+#              #
-#    Updated: 2023/03/03 10:47:48 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/03/09 16:26:58 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,10 +62,7 @@ SRC=ft_isalpha.c \
 	ft_strcmp.c\
 	ft_free_tab.c\
 	ft_perror.c\
-
-OBJ=$(SRC:.c=.o)
-
-BONUS= ft_lstnew.c\
+	ft_lstnew.c\
 	ft_lstadd_front.c\
 	ft_lstsize.c\
 	ft_lstlast.c\
@@ -73,9 +70,8 @@ BONUS= ft_lstnew.c\
 	ft_lstdelone.c\
 	ft_lstclear.c\
 	ft_lstiter.c\
-	ft_lstmap.c\
 
-OBJBONUS =$(BONUS:.c=.o)
+OBJ=$(SRC:.c=.o)
 
 %.o : %.c
 	$(CC) $(CFLAGS) -o $@ -c $<
@@ -93,5 +89,5 @@ fclean : clean
 
 re : fclean $(NAME)
 
-bonus : $(OBJ) $(OBJBONUS)
-	ar rc $(NAME) $(OBJ) $(OBJBONUS)
+
+#	ft_lstmap.c\

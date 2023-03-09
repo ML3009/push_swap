@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 09:01:53 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/09 17:04:20 by mvautrot         ###   ########.fr       */
+/*   Created: 2023/03/09 14:51:46 by mvautrot          #+#    #+#             */
+/*   Updated: 2023/03/09 15:10:15 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/push_swap.h"
 
-t_list	*ft_lstnew(int content)
+void	ft_swap_a(int *tab, int i, int j)
 {
-	t_list	*element;
+	int	tmp;
 
-	element = malloc(sizeof(t_list));
-	if (!element)
-		return (NULL);
-	element->content = content;
-	element->next = NULL;
-	return (element);
+	c = a;
+	a = b;
+	b = c;
+
+	if (!i || !j)
+		return;
+
+
 }
