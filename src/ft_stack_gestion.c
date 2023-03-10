@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:10:27 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/10 16:32:49 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:18:03 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,36 +60,22 @@ void	ft_sort_list(t_lst *stack_tmp)
 void	ft_stack_move(t_lst *stack_a, t_lst *stack_b)
 {
 	ft_sa(stack_a, 1);
-	print_stack(&stack_a);
-	print_stack(&stack_b);
 	ft_sb(stack_b, 1);
-	print_stack(&stack_a);
-	print_stack(&stack_b);
 	ft_ss(stack_a, stack_b);
-	print_stack(&stack_a);
-	print_stack(&stack_b);
 	ft_pb(&stack_a, &stack_b);
-	print_stack(&stack_a);
-	print_stack(&stack_b);
 	ft_pa(&stack_a, &stack_b);
-	print_stack(&stack_a);
-	print_stack(&stack_b);
 	ft_ra(stack_a, 1);
-	print_stack(&stack_a);
-	print_stack(&stack_b);
 	ft_rb(stack_b, 1);
-	print_stack(&stack_a);
-	print_stack(&stack_b);
 	ft_rr(stack_a, stack_b);
-	print_stack(&stack_a);
-	print_stack(&stack_b);
 	ft_rra(stack_a, 1);
-	print_stack(&stack_a);
-	print_stack(&stack_b);
 	ft_rrb(stack_b, 1);
-	print_stack(&stack_a);
-	print_stack(&stack_b);
 	ft_rrr(stack_a, stack_b);
-	print_stack(&stack_a);
-	print_stack(&stack_b);
+}
+
+void	ft_check_list(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp)
+{
+	if (var->size == 3)
+	{
+		if ()
+	}
 }
