@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_lst.c                                      :+:      :+:    :+:   */
+/*   ft_stack_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 15:10:27 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/10 10:52:57 by mvautrot         ###   ########.fr       */
+/*   Created: 2023/03/10 11:59:05 by mvautrot          #+#    #+#             */
+/*   Updated: 2023/03/10 11:59:25 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,28 +70,3 @@ void	ft_add_front_lst(t_lst	**lst, t_lst *new)
 
 
 }*/
-
-void	ft_init_stack(t_vars *var, t_lst **stack_a, t_lst **stack_b)
-{
-	int	i;
-	int	temp;
-	t_lst *tmp;
-	(void)stack_b;
-
-	i = 0;
-	while (i < var->size)
-	{
-		temp = ft_atoi(var->tmp_lst[i]);
-		tmp = ft_new_element(temp);
-		ft_add_back_lst(stack_a, tmp);
-		i++;
-	}
-	//i = 0;
-	//while (i < var->size)
-	//{
-	//	temp = ft_atoi(var->tmp_lst[i]);
-	//	tmp = ft_new_element(temp);
-	//	ft_add_back_lst(stack_b, tmp);
-	//	i++;
-	//}
-}

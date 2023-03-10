@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:38:28 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/09 19:58:18 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:40:21 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ void print_stack(t_lst **stack)
     t_lst *tmp;
 
     tmp = *stack;
+    if (*stack == NULL) {
+        ft_printf("[ Empty ]\n");
+        return;}
     while (tmp->next)
     {
         ft_printf("[ %i ]",tmp->content);

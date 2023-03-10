@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/09 20:26:40 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:52:58 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_lst	*ft_new_element(int content);
 t_lst	*ft_last_lst(t_lst *lst);
 void	ft_add_back_lst(t_lst **lst, t_lst *new);
 void	ft_add_front_lst(t_lst	**lst, t_lst *new);
-void	ft_init_stack(t_vars *var, t_lst **stack_a, t_lst **stack_b);
+void	ft_stack_init(t_vars *var, t_lst **stack_a, t_lst **stack_b);
 
 
 /*MOVE*/
@@ -53,7 +53,8 @@ void	ft_stack_move(t_lst *stack_a, t_lst *stack_b);
 void	ft_swap_a(t_lst *stack_a, int i);
 void	ft_swap_b(t_lst *stack_b, int i);
 void	ft_swap_a_b(t_lst *stack_a, t_lst *stack_b);
-void	ft_push_a(t_lst	*stack_a, t_lst *stack_b, int i);
+void	ft_push_b(t_lst	**stack_a, t_lst **stack_b);
+void	ft_push_a(t_lst **stack_a, t_lst ** stack_b);
 
 /*UTILS*/
 
