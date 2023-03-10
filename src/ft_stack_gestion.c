@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:10:27 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/10 16:29:48 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:32:49 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,16 +46,13 @@ void	ft_sort_list(t_lst *stack_tmp)
 	{
 		if (stack_tmp->content > stack_tmp->next->content)
 		{
-			printf("stack_tmp->content [%i]\n", stack_tmp->content);
 			swap = stack_tmp->content;
 			stack_tmp->content = stack_tmp->next->content;
 			stack_tmp->next->content = swap;
 			stack_tmp = tmp;
-			//print_stack(&stack_tmp);
 		}
 		else
 			stack_tmp = stack_tmp->next;
-		print_stack(&stack_tmp);
 	}
 	stack_tmp = tmp;
 }
