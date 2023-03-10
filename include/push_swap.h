@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/10 12:43:36 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/10 16:21:32 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ t_lst	*ft_new_element(int content);
 t_lst	*ft_last_lst(t_lst *lst);
 void	ft_add_back_lst(t_lst **lst, t_lst *new);
 void	ft_add_front_lst(t_lst	**lst, t_lst *new);
-void	ft_stack_init(t_vars *var, t_lst **stack_a, t_lst **stack_b);
+void	ft_stack_init(t_vars *var, t_lst **stack_a, t_lst **stack_tmp);
+void	ft_sort_list(t_lst *stack_tmp);
 
 
 /*MOVE*/
