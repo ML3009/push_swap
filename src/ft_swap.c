@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:51:46 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/09 20:27:12 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/10 10:54:38 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	ft_stack_move(t_lst *stack_a, t_lst *stack_b)
 {
 
-	ft_swap_a(stack_a, 1);
-	ft_swap_b(stack_b, 1);
-	ft_swap_a_b(stack_a, stack_b);
+	//ft_swap_a(stack_a, 1);
+	//ft_swap_b(stack_b, 1);
+	//ft_swap_a_b(stack_a, stack_b);
 	ft_push_a(stack_a, stack_b, 1);
 	//ft_push_b(stack_a, stack_b);
 }

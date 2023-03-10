@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:10:27 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/09 20:17:50 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/10 10:52:57 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,33 @@ void	ft_add_back_lst(t_lst **lst, t_lst *new)
 
 void	ft_add_front_lst(t_lst	**lst, t_lst *new)
 {
-	new->next = *lst;
-	*lst = new;
+	if (!*lst)
+		*lst = new;
+	else
+	{
+		new->next = *lst;
+		*lst = new;
+	}
 }
+
+/*void	ft_free_element(t_lst **lst, t_lst *element)
+{
+	t_lst	*tmp;
+	int	temp;
+
+	tmp = lst;
+
+	temp = lst->next->content;
+
+
+}*/
 
 void	ft_init_stack(t_vars *var, t_lst **stack_a, t_lst **stack_b)
 {
 	int	i;
 	int	temp;
 	t_lst *tmp;
+	(void)stack_b;
 
 	i = 0;
 	while (i < var->size)
@@ -68,12 +86,12 @@ void	ft_init_stack(t_vars *var, t_lst **stack_a, t_lst **stack_b)
 		ft_add_back_lst(stack_a, tmp);
 		i++;
 	}
-	i = 0;
-	while (i < var->size)
-	{
-		temp = ft_atoi(var->tmp_lst[i]);
-		tmp = ft_new_element(temp);
-		ft_add_back_lst(stack_b, tmp);
-		i++;
-	}
+	//i = 0;
+	//while (i < var->size)
+	//{
+	//	temp = ft_atoi(var->tmp_lst[i]);
+	//	tmp = ft_new_element(temp);
+	//	ft_add_back_lst(stack_b, tmp);
+	//	i++;
+	//}
 }

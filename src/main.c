@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:36:21 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/09 20:00:22 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/10 10:32:58 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(int ac, char **av)
 	t_vars	var;
 	t_lst	*stack_a;
 	t_lst	*stack_b;
+	//t_lst	*stack_tmp;
 
 	stack_a = NULL;
 	stack_b = NULL;
