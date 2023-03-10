@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/10 11:52:58 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:43:36 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,17 @@ void	ft_stack_init(t_vars *var, t_lst **stack_a, t_lst **stack_b);
 
 /*MOVE*/
 void	ft_stack_move(t_lst *stack_a, t_lst *stack_b);
-void	ft_swap_a(t_lst *stack_a, int i);
-void	ft_swap_b(t_lst *stack_b, int i);
-void	ft_swap_a_b(t_lst *stack_a, t_lst *stack_b);
-void	ft_push_b(t_lst	**stack_a, t_lst **stack_b);
-void	ft_push_a(t_lst **stack_a, t_lst ** stack_b);
+void	ft_sa(t_lst *stack_a, int i);
+void	ft_sb(t_lst *stack_b, int i);
+void	ft_ss(t_lst *stack_a, t_lst *stack_b);
+void	ft_pb(t_lst	**stack_a, t_lst **stack_b);
+void	ft_pa(t_lst **stack_a, t_lst ** stack_b);
+void	ft_ra(t_lst *stack_a, int i);
+void	ft_rb(t_lst *stack_b, int i);
+void	ft_rr(t_lst *stack_a, t_lst *stack_b);
+void	ft_rra(t_lst *stack_a, int i);
+void	ft_rrb(t_lst *stack_b, int i);
+void	ft_rrr(t_lst *stack_a, t_lst *stack_b);
 
 /*UTILS*/
 

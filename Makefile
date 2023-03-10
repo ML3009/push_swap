@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/03/10 12:02:40 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/03/10 13:05:27 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ SRC = $(PATH_SRC)/ft_parsing.c\
 	  $(PATH_SRC)/ft_stack_gestion.c\
 	  $(PATH_SRC)/ft_lst_utils.c\
 	  $(PATH_SRC)/ft_swap.c\
+	  $(PATH_SRC)/ft_rotate.c\
+	  $(PATH_SRC)/ft_reverse_rotate.c\
 	  $(PATH_SRC)/ft_utils.c\
 	  $(PATH_SRC)/main.c\
 

@@ -6,13 +6,13 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:51:46 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/10 11:54:21 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:41:11 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_swap_a(t_lst *stack_a, int i)
+void	ft_sa(t_lst *stack_a, int i)
 {
 	int	tmp;
 	t_lst	*save;
@@ -29,7 +29,7 @@ void	ft_swap_a(t_lst *stack_a, int i)
 	}
 }
 
-void	ft_swap_b(t_lst *stack_b, int i)
+void	ft_sb(t_lst *stack_b, int i)
 {
 	int	tmp;
 	t_lst	*save;
@@ -46,12 +46,12 @@ void	ft_swap_b(t_lst *stack_b, int i)
 	}
 }
 
-void	ft_swap_a_b(t_lst *stack_a, t_lst *stack_b)
+void	ft_ss(t_lst *stack_a, t_lst *stack_b)
 {
 	if ((stack_a && stack_a->next) && (stack_b && stack_b->next))
 	{
-		ft_swap_a(stack_a, 0);
-		ft_swap_b(stack_b, 0);
+		ft_sa(stack_a, 0);
+		ft_sb(stack_b, 0);
 		ft_putstr("ss\n");
 	}
 }

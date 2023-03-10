@@ -6,13 +6,13 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 20:05:02 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/10 11:55:41 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:41:37 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_push_b(t_lst	**stack_a, t_lst **stack_b)
+void	ft_pb(t_lst	**stack_a, t_lst **stack_b)
 {
 	t_lst	*tmp;
 
@@ -28,7 +28,7 @@ void	ft_push_b(t_lst	**stack_a, t_lst **stack_b)
 	ft_putstr("pb\n");
 }
 
-void	ft_push_a(t_lst **stack_a, t_lst ** stack_b)
+void	ft_pa(t_lst **stack_a, t_lst ** stack_b)
 {
 	t_lst	*tmp;
 
