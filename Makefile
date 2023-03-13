@@ -6,7 +6,7 @@
 #    By: ml <ml@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/03/13 10:47:00 by ml               ###   ########.fr        #
+#    Updated: 2023/03/13 13:33:58 by ml               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ PATH_LIB = libft
 SRC = $(PATH_SRC)/ft_parsing.c\
 	  $(PATH_SRC)/moves/ft_push.c\
 	  $(PATH_SRC)/ft_moves_gestion.c\
+	  $(PATH_SRC)/ft_sort_gestion.c\
 	  $(PATH_SRC)/ft_create_gestion.c\
 	  $(PATH_SRC)/moves/ft_swap.c\
 	  $(PATH_SRC)/moves/ft_rotate.c\

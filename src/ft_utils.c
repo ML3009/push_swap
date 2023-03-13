@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:38:28 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/13 13:10:21 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/13 15:43:57 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_putstr_exit(char *str)
 	exit(EXIT_FAILURE);
 }
 
-void print_stack(t_lst **stack)
+void print_stack(t_lst **stack, int i)
 {
     t_lst *tmp;
 
@@ -26,15 +26,32 @@ void print_stack(t_lst **stack)
     if (*stack == NULL) {
         ft_printf("[ Empty ]\n");
         return;}
-    while (tmp->next)
+    if (i == 0)
     {
+        while (tmp->next)
+        {
+            ft_printf("index : [ %i ]",tmp->index);
+            ft_printf(" stack B : [ %i ]\n",tmp->content);
+            tmp = tmp->next;
+        }
         ft_printf("index : [ %i ]",tmp->index);
-        ft_printf(" stack : [ %i ]\n",tmp->content);
-        tmp = tmp->next;
+	    ft_printf(" stack B : [ %i ]",tmp->content);
+	    ft_printf("\n");
+        ft_printf("\n");
     }
-    ft_printf("index : [ %i ]",tmp->index);
-	ft_printf(" stack : [ %i ]",tmp->content);
-	ft_printf("\n");
+    else
+    {
+        while (tmp->next)
+        {
+            ft_printf("index : [ %i ]",tmp->index);
+            ft_printf(" stack : [ %i ]\n",tmp->content);
+            tmp = tmp->next;
+        }
+        ft_printf("index : [ %i ]",tmp->index);
+	    ft_printf(" stack : [ %i ]",tmp->content);
+	    ft_printf("\n");
+        ft_printf("\n");
+    }
 }
 
 void	ft_stack_init(t_vars *var, t_lst **stack_a, t_lst **stack_tmp)

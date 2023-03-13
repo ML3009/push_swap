@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:36:21 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/13 13:09:33 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/13 15:05:11 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,10 @@ int	main(int ac, char **av)
 	ft_stack_init(&var, &stack_a, &stack_tmp);
 	ft_sort_list(stack_tmp);
 	ft_get_index(stack_tmp);
-	print_stack(&stack_tmp);
+	print_stack(&stack_tmp, 1);
 	ft_check_list(&var, &stack_a, &stack_b, &stack_tmp);
-	print_stack(&stack_a);
-	//ft_stack_move(stack_a, stack_tmp);
-
+	//print_stack(&stack_a, 1);
+	//print_stack(&stack_b, 0);
 
 
 	return(0);

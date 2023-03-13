@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_utils.c                                     :+:      :+:    :+:   */
+/*   ft_create_gestion.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 11:59:05 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/10 15:02:47 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/13 18:18:15 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,21 @@ void	ft_add_front_lst(t_lst	**lst, t_lst *new)
 		*lst = new;
 	}
 }
+
+int	ft_size_lst(t_lst *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+	i++;
+	}
+	return (i);
+}
+
+
 
 /*void	ft_free_element(t_lst **lst, t_lst *element)
 {
