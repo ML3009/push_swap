@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/10 16:21:32 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/13 13:23:38 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef	struct s_vars
 typedef struct s_lst
 {
 	int			content;
+	int	index;
 	struct s_lst	*next;
 }t_lst;
 
@@ -63,10 +64,16 @@ void	ft_rra(t_lst *stack_a, int i);
 void	ft_rrb(t_lst *stack_b, int i);
 void	ft_rrr(t_lst *stack_a, t_lst *stack_b);
 
+void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot);
+
+void	ft_check_list(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp);
+
 /*UTILS*/
 
 void	ft_putstr_exit(char *str);
-
+void	ft_get_index(t_lst *stack_tmp);
+int	ft_get_pivot(t_lst *stack_tmp, int mid);
+int	ft_sort_same(t_lst *stack_a, t_lst *stack_tmp, t_vars *var);
 void print_stack(t_lst **stack);
 
 #endif

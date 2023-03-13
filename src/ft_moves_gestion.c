@@ -1,40 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_gestion.c                                 :+:      :+:    :+:   */
+/*   ft_moves_gestion.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:10:27 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/10 18:18:03 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/13 13:30:22 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-
-void	ft_stack_init(t_vars *var, t_lst **stack_a, t_lst **stack_tmp)
-{
-	int	i;
-	int	temp;
-	t_lst *tmp;
-
-	i = 0;
-	while (i < var->size)
-	{
-		temp = ft_atoi(var->tmp_lst[i]);
-		tmp = ft_new_element(temp);
-		ft_add_back_lst(stack_a, tmp);
-		i++;
-	}
-	i = 0;
-	while (i < var->size)
-	{
-		temp = ft_atoi(var->tmp_lst[i]);
-		tmp = ft_new_element(temp);
-		ft_add_back_lst(stack_tmp, tmp);
-		i++;
-	}
-}
 
 void	ft_sort_list(t_lst *stack_tmp)
 {
@@ -74,8 +50,69 @@ void	ft_stack_move(t_lst *stack_a, t_lst *stack_b)
 
 void	ft_check_list(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp)
 {
+	int	pivot;
+
+	
+	pivot = ft_get_pivot((*stack_tmp), (var->size / 2));
+	if (ft_sort_same((*stack_a), (*stack_tmp), var) == 1)
+		exit(EXIT_SUCCESS);
 	if (var->size == 3)
 	{
-		if ()
+		ft_sort_3((*stack_a), (*stack_b), pivot);
 	}
+}
+
+int	ft_sort_same(t_lst *stack_a, t_lst *stack_tmp, t_vars *var)
+{
+	t_lst	*tmp_a;
+	t_lst	*tmp;
+	int i;
+	
+	tmp_a = stack_a;
+	tmp = stack_tmp;
+	i = 0;
+	while (i < var->size)
+	{
+		if (stack_a->content != stack_tmp->content)
+		{
+			stack_a = tmp_a;
+			stack_tmp = tmp;
+			return(0);
+		}
+		stack_a = stack_a->next;
+		stack_tmp = stack_tmp->next;
+		i++;
+	}
+	return(1);
+}
+
+void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot)
+{
+	t_lst	*tmp;
+	
+	tmp = stack_a;
+	if(stack_a->content > pivot && stack_a->next->content < pivot)
+		ft_ra(stack_a, 1);
+	else if (stack_a->content == pivot)
+	{
+		if(stack_a->next->content < pivot)
+			ft_sa(stack_a, 1);
+		else 
+			ft_rra(stack_a, 1);
+	}
+	else
+	{
+		if (stack_a->content < pivot && stack_a->next->content > pivot)
+		{
+			ft_pb(&stack_a, &stack_b);
+			ft_sa(stack_a, 1);
+			ft_pa(&stack_a, &stack_b);
+		}
+		else
+		{
+			ft_ra(stack_a, 1);
+			ft_sa(stack_a, 1);
+		}
+	}
+	stack_a = tmp;
 }
