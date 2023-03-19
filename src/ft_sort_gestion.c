@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 13:32:38 by ml                #+#    #+#             */
-/*   Updated: 2023/03/13 18:09:31 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/15 12:46:26 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,36 +93,37 @@ void	ft_sort_pivot(t_vars *var, t_lst *stack_a, t_lst *stack_b, int pivot)
 	//t_lst	*tmp_a;
 	//t_lst	*tmp_b;
 	int	i;
-	int	a;
-	int	b;
-	int pivot_a;
-	int	pivot_b;
 	
 	//tmp_a = (*stack_a);
 	//tmp_b = stack_b;
 	i = 0;
-	pivot_a = 0;
-	pivot_b = 0;
-	a = 0;
-	b = 0;
+	//pivot_a = 0;
+
 
 	printf("pivot : [%i]\n", pivot);
 	while (i < var->size)
 	{
 		if(stack_a->content < pivot)
-		{	
 			ft_pb(&stack_a, &stack_b);
-			b++;
-		}
 		else
-		{
 			ft_ra(stack_a, 1);
-			a++;
-		}
 		i++;
 	}
-	ft_sort_3(stack_a, stack_b, stack_a->content);
+	//tmp_a = stack_a;
+	print_stack(&stack_a, 1);
+	
+	ft_get_index(stack_a);
+	pivot = ft_get_pivot(stack_a, (ft_size_lst(stack_a) / 2));
+	printf("pivot_last : [%i]\n", pivot);
 	i = 0;
+	while (i < ft_size_lst(stack_a))
+	{
+		if (stack_a->content > pivot)
+			ft_pb(&stack_a, &stack_b);
+		i++;
+	}
+	ft_sort_3(stack_a, stack_b, pivot);
+	/*i = 0;
 	while(i < 3)
 	{
 		ft_pb(&stack_a, &stack_b);
@@ -134,7 +135,7 @@ void	ft_sort_pivot(t_vars *var, t_lst *stack_a, t_lst *stack_b, int pivot)
 	{
 		ft_pa(&stack_a, &stack_b);
 		i++;
-	}
+	}*/
 	
 	//tmp_a = stack_a;
 	//tmp_b = stack_b;
@@ -162,8 +163,7 @@ void	ft_sort_pivot(t_vars *var, t_lst *stack_a, t_lst *stack_b, int pivot)
 		ft_rb(stack_b, 1);
 		i++;
 	}*/
-	printf("pivot_a : [%i]\n", pivot_a);
-	printf("pivot_b : [%i]\n", pivot_b);
+	printf("pivot_last : [%i]\n", pivot);
 	
 	
 	/*i = 0;
