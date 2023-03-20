@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/13 18:18:33 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/20 13:14:04 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ void	ft_rrr(t_lst *stack_a, t_lst *stack_b);
 void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot);
 
 void	ft_check_list(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp);
+
+int	ft_get_min(t_lst *stack);
+int	ft_get_max(t_lst *stack);
+int	ft_get_new_pivot(t_lst *stack);
 
 void	ft_sort_pivot(t_vars *var, t_lst *stack_a, t_lst *stack_b, int pivot);
 /*UTILS*/

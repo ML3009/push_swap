@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:38:28 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/13 15:43:57 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/20 13:45:29 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,14 @@ void	ft_get_index(t_lst *stack_tmp)
 		i++;
 	}
 	stack_tmp->index = i;
-	stack_tmp = tmp;	
+	stack_tmp = tmp;
 }
 
 
 int	ft_get_pivot(t_lst *stack_tmp, int mid)
 {
 	//t_lst *tmp;
-	//tmp = stack_tmp;    
+	//tmp = stack_tmp;
 
 	while(stack_tmp->next)
 	{
@@ -108,5 +108,61 @@ int	ft_get_pivot(t_lst *stack_tmp, int mid)
         stack_tmp = stack_tmp->next;
 	}
     //stack_tmp = tmp;
+	return (0);
+}
+
+int	ft_get_min(t_lst *stack)
+{
+	t_lst	*tmp;
+	int	min;
+
+	tmp = stack;
+	min = stack->content;
+	while(stack->next)
+	{
+		if (stack->content < min)
+			min = stack->content;
+		stack = stack->next;
+	}
+	if (stack->content < min)
+		min = stack->content;
+	stack = tmp;
+	return(min);
+}
+
+int	ft_get_max(t_lst *stack)
+{
+	t_lst	*tmp;
+	int	max;
+
+	tmp = stack;
+	max = stack->content;
+	while(stack->next)
+	{
+		if (stack->content > max)
+			max = stack->content;
+		stack = stack->next;
+	}
+	if (stack->content > max)
+		max = stack->content;
+	stack = tmp;
+	return(max);
+}
+
+int	ft_get_new_pivot(t_lst *stack)
+{
+	int	max;
+	int	min;
+
+	min = ft_get_min(stack);
+	max = ft_get_max(stack);
+	while (stack->next)
+	{
+		if (stack->content > min && stack->content < max)
+			return (stack->content);
+		stack = stack->next;
+	}
+	if (stack->content > min && stack->content < max)
+		return (stack->content);
 	return (0);
 }
