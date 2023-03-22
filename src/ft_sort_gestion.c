@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_gestion.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 13:32:38 by ml                #+#    #+#             */
-/*   Updated: 2023/03/20 13:45:57 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/22 13:58:18 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot)
 	t_lst	*tmp;
 
 	tmp = stack_a;
+	if (stack_a->content < pivot && stack_a->next->content == pivot)
+		return;
 	if(stack_a->content > pivot && stack_a->next->content < pivot)
 		ft_ra(stack_a, 1);
 	else if (stack_a->content == pivot)
@@ -86,32 +88,24 @@ void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot)
 		}
 	}
 	stack_a = tmp;
-	print_stack(&stack_a,1);
 }
 
-void	ft_sort_pivot(t_vars *var, t_lst *stack_a, t_lst *stack_b, int pivot)
+void	ft_sort_10(t_vars *var, t_lst *stack_a, t_lst *stack_b, int pivot)
 {
-	//int	i;
 	int	min;
 	int size = var->size;
 
-	//i = 0;
 	while (size > 3)
 	{
 		min = ft_get_min(stack_a);
-		while( stack_a->content != min)
+		while(stack_a->content != min)
 			ft_ra(stack_a, 1);
 		ft_pb(&stack_a, &stack_b);
 		size--;
 	}
-	pivot = ft_get_new_pivot(stack_a);
-	printf("p = %i\n",pivot);
-
+	pivot = ft_get_new_pivot(stack_a);	
 	ft_sort_3(stack_a,stack_b,pivot);
 	while((stack_b))
 		ft_pa(&stack_a, &stack_b);
 	ft_pa(&stack_a, &stack_b);
-	print_stack(&stack_a, 1);
-	print_stack(&stack_b, 0);
 }
-

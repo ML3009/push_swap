@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:36:21 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/20 10:18:01 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/21 09:10:40 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 	ft_sort_list(stack_tmp);
 	ft_get_index(stack_tmp);
 	//print_stack(&stack_tmp, 1);
-	ft_check_list(&var, &stack_a, &stack_b, &stack_tmp);
+	ft_check_stack(&var, &stack_a, &stack_b, &stack_tmp);
 	//print_stack(&stack_a, 1);
 	//print_stack(&stack_b, 0);
 
