@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:38:28 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/20 13:45:29 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/03/23 10:01:39 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,20 +96,29 @@ void	ft_get_index(t_lst *stack_tmp)
 }
 
 
-int	ft_get_pivot(t_lst *stack_tmp, int mid)
+int	ft_get_pivot2(t_lst *stack_tmp, int mid)
 {
-	//t_lst *tmp;
-	//tmp = stack_tmp;
-
+	ft_get_index(stack_tmp);
 	while(stack_tmp->next)
 	{
 		if(stack_tmp->index == mid)
 			return(stack_tmp->content);
         stack_tmp = stack_tmp->next;
 	}
-    //stack_tmp = tmp;
 	return (0);
 }
+
+int	ft_get_pivot(t_lst *stack_tmp, int mid)
+{
+	while(stack_tmp->next)
+	{
+		if(stack_tmp->index == mid)
+			return(stack_tmp->content);
+        stack_tmp = stack_tmp->next;
+	}
+	return (0);
+}
+
 
 int	ft_get_min(t_lst *stack)
 {
@@ -129,6 +138,9 @@ int	ft_get_min(t_lst *stack)
 	stack = tmp;
 	return(min);
 }
+
+
+
 
 int	ft_get_max(t_lst *stack)
 {

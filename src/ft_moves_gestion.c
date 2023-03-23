@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:10:27 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/22 15:12:23 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/22 17:39:32 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ void	ft_check_stack(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack
 	}
 	else
 	{
-		ft_quicksort(var, (*stack_a), (*stack_b), (*stack_tmp)); 
+		ft_quicksort(var, stack_a, stack_b, stack_tmp); 
 	}
 }
