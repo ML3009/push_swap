@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 07:52:47 by ml                #+#    #+#             */
-/*   Updated: 2023/03/23 10:04:46 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/23 11:09:08 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	ft_quicksort(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_t
             ft_quick_b(stack_a, stack_b, stack_tmp, var);
         else
             ft_quick_a(stack_a, stack_b, stack_tmp, var);
-        //print_stack(stack_b, 0);
-        //print_stack(stack_a, 1);
+        print_stack(stack_b, 0);
+        print_stack(stack_a, 1);
     }
 }
 
@@ -61,6 +61,7 @@ void    ft_quick_a(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *
     int i;
     i = 0;
     moves = ft_size_lst((*stack_b));
+    //var->min = ft_get_min(*stack_b);
     print_stack(stack_a, 1);
     print_stack(stack_b, 0);
     while(ft_size_lst((*stack_b)) && i < moves)
@@ -90,9 +91,9 @@ void    ft_replace_min(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_va
     {
         var->check = 1;
         ft_ra((*stack_a), 1);
-        (*stack_tmp) = (*stack_tmp)->next;
-        var->min = (*stack_tmp)->content;
-        //var->min++;
+        if (ft_size_lst(*stack_b) <= 1)
+            return;
+        var->min = ft_get_min(*stack_b);
         printf("var->min : %i\n", var->min);
             
     }
@@ -103,25 +104,31 @@ void    ft_replace_min(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_va
         ft_sa((*stack_a), 1);
     }
     else if (ft_size_lst((*stack_a)) > 1 && (*stack_a)->next->content == var->min 
-        && (*stack_b)->next->content == var->min + 1)
+        && (*stack_b)->next->content == var->min)
         ft_ss((*stack_a),(*stack_b));
     else    
         return;
+    //var->check = 0;
     ft_replace_min(stack_a, stack_b, stack_tmp, var);
     
 }
 
 void    ft_quick_b(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var)
 {
-    int check_tmp;
+   while ((*stack_a)->content != var->min)
+            ft_pb(stack_a, stack_b);
+    ft_pb(stack_a, stack_b);
+    ft_replace_min(stack_a, stack_b, stack_tmp, var);
+   /* int check_tmp;
 
+    var->min = ft_get_min(*stack_a);
     check_tmp = var->check;
     
     if(var->check != 0)
     {
         while(var->check == check_tmp)
         {
-            if ((*stack_a)->content != var->min)
+            while ((*stack_a)->content != var->min)
                 ft_pb(stack_a, stack_b);
             ft_replace_min(stack_a, stack_b, stack_tmp, var);
         }
@@ -134,8 +141,9 @@ void    ft_quick_b(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *
                 ft_pb(stack_a, stack_b);
             ft_replace_min(stack_a, stack_b, stack_tmp, var);
         }
-    }
+    }*/
     if (ft_size_lst((*stack_b)))
         var->max = (ft_get_max(*stack_b));
     var->mid = ft_get_pivot2(*stack_b, (ft_size_lst((*stack_b))/2));
+    var->min = ft_get_min(*stack_b);
 }

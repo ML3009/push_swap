@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:38:28 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/23 10:01:39 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/23 10:09:19 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,18 @@ int	ft_get_min(t_lst *stack)
 	return(min);
 }
 
+int	ft_get_next_min(t_lst *stack)
+{
+	t_lst	*tmp;
+	int	min;
 
+	tmp = stack;
+	if (stack->next == NULL)
+		stack = tmp;
+	stack = stack->next;
+    min = stack->content;
+	return(min);
+}
 
 
 int	ft_get_max(t_lst *stack)
