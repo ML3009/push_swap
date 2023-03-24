@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 13:32:38 by ml                #+#    #+#             */
-/*   Updated: 2023/03/22 13:58:18 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/24 15:21:47 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ int	ft_sort_same(t_lst *stack_a, t_lst *stack_tmp, t_vars *var)
 void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot)
 {
 	t_lst	*tmp;
+	(void)stack_b;
 
 	tmp = stack_a;
 	if (stack_a->content < pivot && stack_a->next->content == pivot)
@@ -76,12 +77,6 @@ void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot)
 	else
 	{
 		if (stack_a->content < pivot && stack_a->next->content > pivot)
-		{
-			ft_pb(&stack_a, &stack_b);
-			ft_sa(stack_a, 1);
-			ft_pa(&stack_a, &stack_b);
-		}
-		else
 		{
 			ft_ra(stack_a, 1);
 			ft_sa(stack_a, 1);

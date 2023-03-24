@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:38:28 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/23 10:09:19 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/24 16:21:35 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ int	ft_get_pivot2(t_lst *stack_tmp, int mid)
 
 int	ft_get_pivot(t_lst *stack_tmp, int mid)
 {
+	ft_get_index(stack_tmp);
 	while(stack_tmp->next)
 	{
 		if(stack_tmp->index == mid)
@@ -139,17 +140,59 @@ int	ft_get_min(t_lst *stack)
 	return(min);
 }
 
-int	ft_get_next_min(t_lst *stack)
+int	ft_get_min_index(t_lst *stack)
 {
 	t_lst	*tmp;
 	int	min;
 
+	ft_get_index(stack);
+
 	tmp = stack;
-	if (stack->next == NULL)
-		stack = tmp;
-	stack = stack->next;
-    min = stack->content;
+	min = stack->index;
+	while(stack->next)
+	{
+		if (stack->index < min)
+			min = stack->index;
+		stack = stack->next;
+	}
+	if (stack->index < min)
+		min = stack->index;
+	stack = tmp;
 	return(min);
+}
+
+int	ft_get_max_index(t_lst *stack)
+{
+	t_lst	*tmp;
+	int	max;
+
+	ft_get_index(stack);
+
+	tmp = stack;
+	max = stack->index;
+	while(stack->next)
+	{
+		if (stack->index > max)
+			max = stack->index;
+		stack = stack->next;
+	}
+	if (stack->index > max)
+		max = stack->index;
+	stack = tmp;
+	return(max);
+}
+
+int	ft_get_end(t_lst *stack)
+{
+	t_lst	*tmp;
+	int	end;
+
+	tmp = stack;
+	while(stack->next)
+		stack = stack->next;
+	end = stack->content;
+	stack = tmp;
+	return(end);
 }
 
 
@@ -189,3 +232,5 @@ int	ft_get_new_pivot(t_lst *stack)
 		return (stack->content);
 	return (0);
 }
+
+

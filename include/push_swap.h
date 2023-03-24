@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/23 10:09:50 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/24 15:42:17 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef	struct s_vars
 	int	mid;
 	int	max;
 	int	check;
+	int	end;
 
 }	t_vars;
 
@@ -70,7 +71,9 @@ void    ft_push_min(t_vars *var, t_lst **stack_a, t_lst **stack_b);
 void    ft_replace_min(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
 
 int	ft_get_pivot2(t_lst *stack_tmp, int mid);
-int	ft_get_next_min(t_lst *stack);
+int	ft_get_end(t_lst *stack);
+
+
 /*STACK MOVES*/
 
 void	ft_sa(t_lst *stack_a, int i);
@@ -98,5 +101,11 @@ int	ft_get_pivot(t_lst *stack_tmp, int mid);
 
 void	ft_putstr_exit(char *str);
 void print_stack(t_lst **stack, int i);
+
+int	check_sorting(t_lst **stack1);
+int	check_sorting_a(t_lst **stack1, int count);
+
+int	ft_get_min_index(t_lst *stack);
+int	ft_get_max_index(t_lst *stack);
 
 #endif
