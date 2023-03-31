@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:10:27 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/22 17:39:32 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/31 12:23:12 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,36 @@ void	ft_check_stack(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack
 		ft_quicksort(var, stack_a, stack_b, stack_tmp); 
 	}
 }
+
+
+
+int	ft_get_next_max(t_lst *stack, int size)
+{
+	int	i;
+	t_lst *tmp;
+
+	tmp = stack;
+	i = 0;
+	while (tmp->next != NULL && i < size - 1)
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return(tmp->content);
+}
+
+int	ft_get_min_10(t_lst *stack, int size)
+{
+	int	i;
+	t_lst *tmp;
+
+	tmp = stack;
+	i = 0;
+	while (tmp->next != NULL && i < size - (size - 10))
+	{
+		tmp = tmp->next;
+		i++;
+	}
+	return(tmp->content);
+}
+

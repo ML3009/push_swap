@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/24 15:42:17 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/31 12:23:30 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef	struct s_vars
 	int	size;
 	int	min;
 	int	mid;
+	int	mid_0;
+	int	mid_1;
+	int mid_2;
 	int	max;
 	int	check;
 	int	end;
@@ -66,13 +69,21 @@ void	ft_sort_10(t_vars *var, t_lst *stack_a, t_lst *stack_b, int pivot);
 void	ft_quicksort(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp);
 void    ft_quick_a(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
 void    ft_quick_b(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
+void    ft_search_next_max(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
 
-void    ft_push_min(t_vars *var, t_lst **stack_a, t_lst **stack_b);
+void    ft_push_min(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp);
+void ft_replace_max(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
+
+int	ft_get_next_max(t_lst *stack, int size);
+
 void    ft_replace_min(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
 
-int	ft_get_pivot2(t_lst *stack_tmp, int mid);
 int	ft_get_end(t_lst *stack);
 
+int	ft_get_quick(t_lst *stack_tmp, int mid);
+
+
+int get_position (t_lst *stack, int content);
 
 /*STACK MOVES*/
 

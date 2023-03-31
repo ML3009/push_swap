@@ -6,7 +6,7 @@
 #    By: ml <ml@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/03/22 11:41:08 by ml               ###   ########.fr        #
+#    Updated: 2023/03/31 11:40:23 by ml               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,8 @@ SRC = $(PATH_SRC)/ft_parsing.c\
 	  $(PATH_SRC)/moves/ft_swap.c\
 	  $(PATH_SRC)/moves/ft_rotate.c\
 	  $(PATH_SRC)/moves/ft_reverse_rotate.c\
-	  $(PATH_SRC)/ft_quicksort.c\
+	  $(PATH_SRC)/ft_quicksort2.c\
+	  $(PATH_SRC)/ft_quicksort_utils.c\
 	  $(PATH_SRC)/ft_utils.c\
 	  $(PATH_SRC)/main.c\
 

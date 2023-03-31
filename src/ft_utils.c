@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:38:28 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/24 16:21:35 by ml               ###   ########.fr       */
+/*   Updated: 2023/03/31 11:40:50 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void print_stack(t_lst **stack, int i)
     {
         while (tmp->next)
         {
-            ft_printf("index : [ %i ]",tmp->index);
+           // ft_printf("index : [ %i ]",tmp->index);
             ft_printf(" stack B : [ %i ]\n",tmp->content);
             tmp = tmp->next;
         }
-        ft_printf("index : [ %i ]",tmp->index);
+        //ft_printf("index : [ %i ]",tmp->index);
 	    ft_printf(" stack B : [ %i ]",tmp->content);
 	    ft_printf("\n");
         ft_printf("\n");
@@ -43,11 +43,11 @@ void print_stack(t_lst **stack, int i)
     {
         while (tmp->next)
         {
-            ft_printf("index : [ %i ]",tmp->index);
+           // ft_printf("index : [ %i ]",tmp->index);
             ft_printf(" stack : [ %i ]\n",tmp->content);
             tmp = tmp->next;
         }
-        ft_printf("index : [ %i ]",tmp->index);
+       // ft_printf("index : [ %i ]",tmp->index);
 	    ft_printf(" stack : [ %i ]",tmp->content);
 	    ft_printf("\n");
         ft_printf("\n");
@@ -96,17 +96,7 @@ void	ft_get_index(t_lst *stack_tmp)
 }
 
 
-int	ft_get_pivot2(t_lst *stack_tmp, int mid)
-{
-	ft_get_index(stack_tmp);
-	while(stack_tmp->next)
-	{
-		if(stack_tmp->index == mid)
-			return(stack_tmp->content);
-        stack_tmp = stack_tmp->next;
-	}
-	return (0);
-}
+
 
 int	ft_get_pivot(t_lst *stack_tmp, int mid)
 {
@@ -119,6 +109,7 @@ int	ft_get_pivot(t_lst *stack_tmp, int mid)
 	}
 	return (0);
 }
+
 
 
 int	ft_get_min(t_lst *stack)
