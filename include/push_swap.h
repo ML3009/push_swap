@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/31 12:23:30 by ml               ###   ########.fr       */
+/*   Updated: 2023/04/02 12:16:09 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef	struct s_vars
 	int	max;
 	int	check;
 	int	end;
+	int	stop;
+	int	tmp;
 
 }	t_vars;
 

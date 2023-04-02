@@ -6,7 +6,7 @@
 /*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:37:09 by ml                #+#    #+#             */
-/*   Updated: 2023/03/31 17:25:46 by ml               ###   ########.fr       */
+/*   Updated: 2023/04/02 19:42:11 by ml               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,18 @@ void    ft_search_next_max(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, 
     max = get_position((*stack_tmp), var->max);
     next_max = ft_get_next_max((*stack_tmp), max);
     var->max = next_max;  
-    printf("var->max search : %i\n", var->max);
+    if(var->max < var->mid)
+        var->mid = var->max;
+      if (var->max == 1)
+      {
+         print_stack(stack_a, 1);
+        print_stack(stack_b, 0); 
+            printf(" var max %i\n", var->max);
+       printf("STOP : %i\n", var->stop);
+          printf("var->mid FIN %i\n", var->mid);
+        printf("var->min FIN %i\n", var->min);
+       //exit(EXIT_SUCCESS);
+    }
 }
+
+
