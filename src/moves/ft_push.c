@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 20:05:02 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/13 10:19:45 by ml               ###   ########.fr       */
+/*   Updated: 2023/04/03 09:53:00 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	ft_pb(t_lst	**stack_a, t_lst **stack_b)
+void	ft_pb(t_lst	**stack_a, t_lst **stack_b, t_vars *var)
 {
 	t_lst	*tmp;
 
@@ -25,10 +25,11 @@ void	ft_pb(t_lst	**stack_a, t_lst **stack_b)
 		(*stack_a) = tmp;
 
 	}
+	var->count++;
 	ft_putstr("pb\n");
 }
 
-void	ft_pa(t_lst **stack_a, t_lst ** stack_b)
+void	ft_pa(t_lst **stack_a, t_lst ** stack_b, t_vars *var)
 {
 	t_lst	*tmp;
 
@@ -41,6 +42,6 @@ void	ft_pa(t_lst **stack_a, t_lst ** stack_b)
 		(*stack_b) = tmp;
 
 	}
+	var->count++;
 	ft_putstr("pa\n");
 }
-

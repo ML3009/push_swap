@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:43:59 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/13 10:19:53 by ml               ###   ########.fr       */
+/*   Updated: 2023/04/03 10:01:11 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	ft_rra(t_lst *stack_a, int i)
+void	ft_rra(t_lst *stack_a, int i, t_vars *var)
 {
 	t_lst	*tmp;
 	int	save;
@@ -34,11 +34,14 @@ void	ft_rra(t_lst *stack_a, int i)
 		stack_a->content = save;
 		stack_a = tmp;
 		if (i == 1)
+		{
 			ft_putstr("rra\n");
+			var->count++;
+		}
 	}
 }
 
-void	ft_rrb(t_lst *stack_b, int i)
+void	ft_rrb(t_lst *stack_b, int i, t_vars *var)
 {
 	t_lst	*tmp;
 	int	save;
@@ -60,18 +63,22 @@ void	ft_rrb(t_lst *stack_b, int i)
 		stack_b->content = save;
 		stack_b = tmp;
 		if (i == 1)
+		{
 			ft_putstr("rrb\n");
+			var->count++;
+		}
 	}
 }
 
 
-void	ft_rrr(t_lst *stack_a, t_lst *stack_b)
+void	ft_rrr(t_lst *stack_a, t_lst *stack_b, t_vars *var)
 {
 	if ((stack_a && stack_a->next) && (stack_b && stack_b->next))
 	{
-		ft_rra(stack_a, 0);
-		ft_rrb(stack_b, 0);
+		ft_rra(stack_a, 0,var);
+		ft_rrb(stack_b, 0,var);
 		ft_putstr("rrr\n");
+		var->count++;
 	}
 
 }

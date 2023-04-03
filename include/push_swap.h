@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/04/02 12:16:09 by ml               ###   ########.fr       */
+/*   Updated: 2023/04/03 11:31:59 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ typedef	struct s_vars
 	int	end;
 	int	stop;
 	int	tmp;
+	int count;
+	int quick;
 
 }	t_vars;
 
@@ -65,7 +67,7 @@ void	ft_check_stack(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack
 /*STACK SORT*/
 void	ft_sort_list(t_lst *stack_tmp);
 int	ft_sort_same(t_lst *stack_a, t_lst *stack_tmp, t_vars *var);
-void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot);
+void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot,t_vars *var);
 void	ft_sort_10(t_vars *var, t_lst *stack_a, t_lst *stack_b, int pivot);
 
 void	ft_quicksort(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp);
@@ -73,7 +75,7 @@ void    ft_quick_a(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *
 void    ft_quick_b(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
 void    ft_search_next_max(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
 
-void    ft_push_min(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp);
+void    ft_push_min(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, int n);
 void ft_replace_max(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
 
 int	ft_get_next_max(t_lst *stack, int size);
@@ -89,17 +91,17 @@ int get_position (t_lst *stack, int content);
 
 /*STACK MOVES*/
 
-void	ft_sa(t_lst *stack_a, int i);
-void	ft_sb(t_lst *stack_b, int i);
-void	ft_ss(t_lst *stack_a, t_lst *stack_b);
-void	ft_pb(t_lst	**stack_a, t_lst **stack_b);
-void	ft_pa(t_lst **stack_a, t_lst ** stack_b);
-void	ft_ra(t_lst *stack_a, int i);
-void	ft_rb(t_lst *stack_b, int i);
-void	ft_rr(t_lst *stack_a, t_lst *stack_b);
-void	ft_rra(t_lst *stack_a, int i);
-void	ft_rrb(t_lst *stack_b, int i);
-void	ft_rrr(t_lst *stack_a, t_lst *stack_b);
+void	ft_sa(t_lst *stack_a, int i, t_vars *var);
+void	ft_sb(t_lst *stack_b, int i, t_vars *var);
+void	ft_ss(t_lst *stack_a, t_lst *stack_b, t_vars *var);
+void	ft_pb(t_lst	**stack_a, t_lst **stack_b, t_vars *var);
+void	ft_pa(t_lst **stack_a, t_lst ** stack_b, t_vars *var);
+void	ft_ra(t_lst *stack_a, int i, t_vars *var);
+void	ft_rb(t_lst *stack_b, int i, t_vars *var);
+void	ft_rr(t_lst *stack_a, t_lst *stack_b, t_vars *var);
+void	ft_rra(t_lst *stack_a, int i, t_vars *var);
+void	ft_rrb(t_lst *stack_b, int i, t_vars *var);
+void	ft_rrr(t_lst *stack_a, t_lst *stack_b, t_vars *var);
 
 
 /*STACK UTILS */
@@ -120,5 +122,7 @@ int	check_sorting_a(t_lst **stack1, int count);
 
 int	ft_get_min_index(t_lst *stack);
 int	ft_get_max_index(t_lst *stack);
+
+void print_all_pile(t_lst **a, t_lst **b);
 
 #endif

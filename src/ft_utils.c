@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:38:28 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/31 11:40:50 by ml               ###   ########.fr       */
+/*   Updated: 2023/04/03 10:11:00 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -225,3 +225,38 @@ int	ft_get_new_pivot(t_lst *stack)
 }
 
 
+void print_all_pile(t_lst **a, t_lst **b)
+{
+    t_lst *tmp_a;
+    t_lst *tmp_b;
+
+    tmp_a = (*a);
+    tmp_b = (*b);
+
+    ft_printf("\t[ A ]\t|   [ B ]\n");
+    ft_printf("       --------------------\n");
+    while (tmp_a || tmp_b)
+    {
+        if (tmp_a && tmp_b)
+        {
+
+            ft_printf("\t[ %i ]\t|",tmp_a->content);
+            ft_printf("   [ %i ]\n",tmp_b->content);
+            tmp_a = tmp_a->next;
+            tmp_b = tmp_b->next;
+        }
+        else if (tmp_a && !tmp_b)
+        {
+            ft_printf("\t[ %i ]\t|\t\n",tmp_a->content);
+            tmp_a = tmp_a->next;
+        }
+        else if (!tmp_a && tmp_b)
+        {
+            ft_printf("\t\t|   [ %i ]\n",tmp_b->content);
+            tmp_b = tmp_b->next;
+        }
+        else
+            ft_printf("[ Empty ]\t|\t[ Empty ]\n");
+    }
+    ft_printf("       --------------------\n\n");
+}

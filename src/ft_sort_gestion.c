@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_gestion.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 13:32:38 by ml                #+#    #+#             */
-/*   Updated: 2023/03/24 15:21:47 by ml               ###   ########.fr       */
+/*   Updated: 2023/04/03 10:35:59 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,32 +57,33 @@ int	ft_sort_same(t_lst *stack_a, t_lst *stack_tmp, t_vars *var)
 	return(1);
 }
 
-void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot)
+void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot,t_vars *var)
 {
-	t_lst	*tmp;
-	(void)stack_b;
-
-	tmp = stack_a;
-	if (stack_a->content < pivot && stack_a->next->content == pivot)
-		return;
-	if(stack_a->content > pivot && stack_a->next->content < pivot)
-		ft_ra(stack_a, 1);
-	else if (stack_a->content == pivot)
-	{
-		if(stack_a->next->content < pivot)
-			ft_sa(stack_a, 1);
-		else
-			ft_rra(stack_a, 1);
-	}
-	else
-	{
-		if (stack_a->content < pivot && stack_a->next->content > pivot)
-		{
-			ft_ra(stack_a, 1);
-			ft_sa(stack_a, 1);
-		}
-	}
-	stack_a = tmp;
+    if (check_sorting_a(&stack_a,3))
+        return;
+    if(stack_a->content > pivot && stack_a->next->content < pivot)
+        ft_ra(stack_a,1,var);
+    else if (stack_a->content == pivot)
+    {
+        if (stack_a->next->content < pivot)
+            ft_sa(stack_a,1,var);
+        else
+            ft_rra(stack_a,1,var);
+    }
+    else
+    {
+        if (stack_a->content < pivot && stack_a->next->content > pivot)
+        {
+            ft_pb(&stack_a,&stack_b,var);
+            ft_sa(stack_a,1,var);
+            ft_pa(&stack_a,&stack_b,var);
+        }
+        else
+        {
+            ft_ra(stack_a,1,var);
+            ft_sa(stack_a,1,var);
+        }
+    }
 }
 
 void	ft_sort_10(t_vars *var, t_lst *stack_a, t_lst *stack_b, int pivot)
@@ -94,13 +95,13 @@ void	ft_sort_10(t_vars *var, t_lst *stack_a, t_lst *stack_b, int pivot)
 	{
 		min = ft_get_min(stack_a);
 		while(stack_a->content != min)
-			ft_ra(stack_a, 1);
-		ft_pb(&stack_a, &stack_b);
+			ft_ra(stack_a, 1,var);
+		ft_pb(&stack_a, &stack_b,var);
 		size--;
 	}
-	pivot = ft_get_new_pivot(stack_a);	
-	ft_sort_3(stack_a,stack_b,pivot);
+	pivot = ft_get_new_pivot(stack_a);
+	ft_sort_3(stack_a,stack_b,pivot,var);
 	while((stack_b))
-		ft_pa(&stack_a, &stack_b);
-	ft_pa(&stack_a, &stack_b);
+		ft_pa(&stack_a, &stack_b,var);
+	ft_pa(&stack_a, &stack_b,var);
 }

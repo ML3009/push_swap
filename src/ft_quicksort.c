@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_quicksort.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 07:52:47 by ml                #+#    #+#             */
-/*   Updated: 2023/03/30 19:24:45 by ml               ###   ########.fr       */
+/*   Updated: 2023/04/03 13:57:47 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ void    ft_push_min(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack
             return;
         }
         if ((*stack_a)->content <= var->mid)
-            ft_pb(stack_a, stack_b);
+            ft_pb(stack_a, stack_b,var);
         else
         {
             if(ft_size_lst((*stack_b)) > 1 && ((*stack_b)->content < var->mid / 2))
-                ft_rr((*stack_a), (*stack_b));
+                ft_rr((*stack_a), (*stack_b), var);
             else
-                ft_ra((*stack_a), 1);
+                ft_ra((*stack_a), 1, var);
         }
       //  i++;
    // }
@@ -77,7 +77,7 @@ void    ft_replace_min(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_va
         {
             var->check = -1;
             var->end = (*stack_a)->content;
-            ft_ra((*stack_a), 1);  
+            ft_ra((*stack_a), 1);
             if ((*stack_tmp)->next != NULL)
             {
                 var->min = (*stack_tmp)->next->content;
@@ -90,12 +90,12 @@ void    ft_replace_min(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_va
         {
             ft_sa((*stack_a), 1);
         }
-        else if (ft_size_lst((*stack_a)) > 1 && (*stack_b)->next != NULL && (*stack_a)->next->content == var->min 
+        else if (ft_size_lst((*stack_a)) > 1 && (*stack_b)->next != NULL && (*stack_a)->next->content == var->min
             && (*stack_b)->next->content == (*stack_tmp)->next->content/*ft_get_min(*stack_b)*/)
         {
             ft_ss((*stack_a),(*stack_b));
         }
-        else 
+        else
         {
             var->check = 0;
             return;
@@ -120,11 +120,11 @@ void    ft_quick_a(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *
             var->max = ft_get_max(*stack_a);//if (ft_size_lst(*stack_b) > 0)
             var->mid =ft_get_pivot_test((*stack_tmp), (((get_position((*stack_tmp), var->max) - (get_position((*stack_tmp), var->min))) / 2 + (get_position((*stack_tmp), var->min)))));
             printf("VQR MID %i\n", var->mid);
-            var->check++; // var_check = 0 ou 1; 
+            var->check++; // var_check = 0 ou 1;
             return;
         }
         if ((*stack_b)->content == var->min)
-           ft_replace_min(stack_a, stack_b, stack_tmp, var); 
+           ft_replace_min(stack_a, stack_b, stack_tmp, var);
         else if (ft_size_lst(*stack_b) > 0 && (*stack_b)->content >= var->mid)
         {
             ft_pa(stack_a, stack_b);
@@ -191,7 +191,7 @@ void    ft_quick_b(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *
     printf("var->min : %i\n", var->min);
 
             printf("var->check : %i\n", var->check);
-    
+
     if (var->check >= 0)
     {
         while(var->check >= 0 && (*stack_a)->content != min)
@@ -199,14 +199,14 @@ void    ft_quick_b(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *
             if ((*stack_a)->content != var->min)
                 ft_pb(stack_a, stack_b);
             ft_replace_min(stack_a, stack_b, stack_tmp, var);
-            
+
             printf("coucou != 0 \n");
             printf("var->check : %i\n", var->check);
              printf("check_tmp : %i\n", check_tmp);
               print_stack(stack_a, 1);
             print_stack(stack_b, 0);
             printf("var->min :%i \n", var->min);
-        }   
+        }
     }
     if(var->check == -1)
     {
@@ -220,15 +220,15 @@ void    ft_quick_b(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *
             printf("var->check : %i\n", var->check);
         }
     }*/
- 
-   
+
+
    /* int min = ft_get_min(*stack_a);
     //var->max = ft_get_max(*stack_a);
     //var->mid =ft_get_pivot_test((*stack_tmp), (((get_position((*stack_tmp), var->max) - (get_position((*stack_tmp), var->min))) / 2 + (get_position((*stack_tmp), var->min)))));
     while((*stack_a)->content != min)
     {
         if ((*stack_a)->content == var->min)
-        { 
+        {
             ft_ra((*stack_a), 1);
             if ((*stack_tmp)->next != NULL)
             {
@@ -243,7 +243,7 @@ void    ft_quick_b(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *
             ft_pb(stack_a, stack_b);
         }
         else if ((*stack_a)->content > var->mid) //&& ft_size_lst(*stack_b) > 1)
-        { 
+        {
                 ft_pb(stack_a, stack_b);
                 ft_rb(*stack_b, 1);
         }

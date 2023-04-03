@@ -3,8 +3,8 @@
 #include <time.h>
 #include <stddef.h>
 
-#define LIST_SIZE 500  // Taille de la liste d'entiers
-#define MAX_NUMBER 500  // Valeur maximale pour les entiers générés
+#define LIST_SIZE 100  // Taille de la liste d'entiers
+#define MAX_NUMBER 1000  // Valeur maximale pour les entiers générés
 
 // Fonction qui vérifie si un entier est déjà présent dans la liste
 int contains(int *list, int size, int value) {

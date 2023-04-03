@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:36:21 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/30 19:55:13 by ml               ###   ########.fr       */
+/*   Updated: 2023/04/03 17:02:09 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ int	main(int ac, char **av)
 		ft_putstr_exit("Error : Wrong number of argument\n");
 	ft_parsing(ac, av, &var);
 	ft_stack_init(&var, &stack_a, &stack_tmp);
+	var.count = 0;
 	ft_sort_list(stack_tmp);
 	ft_get_index(stack_tmp);
 	ft_check_stack(&var, &stack_a, &stack_b, &stack_tmp);
+	//ft_printf("Moves = %i",var.count);
 
 
 	return(0);
