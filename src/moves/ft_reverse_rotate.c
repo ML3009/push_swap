@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 12:43:59 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/04/03 10:01:11 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/04/05 09:10:35 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	ft_rra(t_lst *stack_a, int i, t_vars *var)
 
 	if (stack_a && stack_a->next)
 	{
-		tmp = stack_a; // save stack_a
-		stack_a = ft_last_lst(stack_a);//going to last element
-		save = stack_a->content; // save last value
+		tmp = stack_a;
+		stack_a = ft_last_lst(stack_a);
+		save = stack_a->content; 
 		stack_a = tmp;
 		while(stack_a->next)
 		{
@@ -49,9 +49,9 @@ void	ft_rrb(t_lst *stack_b, int i, t_vars *var)
 
 	if (stack_b && stack_b->next)
 	{
-		tmp = stack_b; // save stack_a
-		stack_b = ft_last_lst(stack_b);//going to last element
-		save = stack_b->content; // save last value
+		tmp = stack_b;
+		stack_b = ft_last_lst(stack_b);
+		save = stack_b->content;
 		stack_b = tmp;
 		while(stack_b->next)
 		{

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_create_gestion.c                                :+:      :+:    :+:   */
+/*   ft_lst_gestion.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ml <ml@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 11:59:05 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/13 18:18:15 by ml               ###   ########.fr       */
+/*   Updated: 2023/04/05 09:17:17 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,16 +72,3 @@ int	ft_size_lst(t_lst *lst)
 	return (i);
 }
 
-
-
-/*void	ft_free_element(t_lst **lst, t_lst *element)
-{
-	t_lst	*tmp;
-	int	temp;
-
-	tmp = lst;
-
-	temp = lst->next->content;
-
-
-}*/

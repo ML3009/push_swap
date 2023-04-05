@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ml <ml@student.42.fr>                      +#+  +:+       +#+         #
+#    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/03/31 11:40:23 by ml               ###   ########.fr        #
+#    Updated: 2023/04/05 09:16:49 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,11 @@ SRC = $(PATH_SRC)/ft_parsing.c\
 	  $(PATH_SRC)/moves/ft_push.c\
 	  $(PATH_SRC)/ft_moves_gestion.c\
 	  $(PATH_SRC)/ft_sort_gestion.c\
-	  $(PATH_SRC)/ft_create_gestion.c\
+	  $(PATH_SRC)/ft_lst_gestion.c\
 	  $(PATH_SRC)/moves/ft_swap.c\
 	  $(PATH_SRC)/moves/ft_rotate.c\
 	  $(PATH_SRC)/moves/ft_reverse_rotate.c\
-	  $(PATH_SRC)/ft_quicksort2.c\
+	  $(PATH_SRC)/ft_quicksort.c\
 	  $(PATH_SRC)/ft_quicksort_utils.c\
 	  $(PATH_SRC)/ft_utils.c\
 	  $(PATH_SRC)/main.c\

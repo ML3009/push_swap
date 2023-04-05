@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/04/03 11:31:59 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/04/05 16:01:00 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,8 @@ typedef	struct s_vars
 	int	size;
 	int	min;
 	int	mid;
-	int	mid_0;
-	int	mid_1;
-	int mid_2;
 	int	max;
 	int	check;
-	int	end;
 	int	stop;
 	int	tmp;
 	int count;
@@ -47,7 +43,7 @@ typedef struct s_lst
 
 /*PARSING*/
 
-void	ft_check_number(char *av);
+int	ft_check_number(char *av);
 void	ft_int_tab(t_vars *var);
 void	ft_parsing(int ac, char **av, t_vars *var);
 void	ft_check_double(int	*tab, int i, t_vars *var);
@@ -67,27 +63,12 @@ void	ft_check_stack(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack
 /*STACK SORT*/
 void	ft_sort_list(t_lst *stack_tmp);
 int	ft_sort_same(t_lst *stack_a, t_lst *stack_tmp, t_vars *var);
-void	ft_sort_3(t_lst	*stack_a, t_lst *stack_b, int pivot,t_vars *var);
-void	ft_sort_10(t_vars *var, t_lst *stack_a, t_lst *stack_b, int pivot);
-
+void	ft_sort_3(t_lst	**stack_a, t_lst **stack_b, int pivot,t_vars *var);
+void	ft_sort_10(t_vars *var, t_lst **stack_a, t_lst **stack_b, int pivot);
 void	ft_quicksort(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp);
 void    ft_quick_a(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
-void    ft_quick_b(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
-void    ft_search_next_max(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
-
 void    ft_push_min(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, int n);
-void ft_replace_max(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
 
-int	ft_get_next_max(t_lst *stack, int size);
-
-void    ft_replace_min(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, t_vars *var);
-
-int	ft_get_end(t_lst *stack);
-
-int	ft_get_quick(t_lst *stack_tmp, int mid);
-
-
-int get_position (t_lst *stack, int content);
 
 /*STACK MOVES*/
 
@@ -107,22 +88,20 @@ void	ft_rrr(t_lst *stack_a, t_lst *stack_b, t_vars *var);
 /*STACK UTILS */
 int	ft_get_min(t_lst *stack);
 int	ft_get_max(t_lst *stack);
-int	ft_get_new_pivot(t_lst *stack);
+int	ft_get_pivot_10(t_lst *stack);
 void	ft_get_index(t_lst *stack_tmp);
 int	ft_get_pivot(t_lst *stack_tmp, int mid);
+int	ft_get_quick(t_lst *stack_tmp, int mid);
+int ft_get_position (t_lst *stack, int content);
 
 
 /*UTILS*/
 
+void	ft_free_lst(t_lst *stack);
 void	ft_putstr_exit(char *str);
 void print_stack(t_lst **stack, int i);
-
-int	check_sorting(t_lst **stack1);
-int	check_sorting_a(t_lst **stack1, int count);
-
-int	ft_get_min_index(t_lst *stack);
-int	ft_get_max_index(t_lst *stack);
-
+int	ft_check_sorting(t_lst **stack);
+int	ft_check_sorting_stack(t_lst **stack, int count);
 void print_all_pile(t_lst **a, t_lst **b);
 
 #endif
