@@ -6,7 +6,7 @@
 #    By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/20 09:59:07 by ml                #+#    #+#              #
-#    Updated: 2023/04/05 09:16:49 by mvautrot         ###   ########.fr        #
+#    Updated: 2023/04/13 14:40:07 by mvautrot         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,14 +22,15 @@ PATH_LIB = libft
 
 SRC = $(PATH_SRC)/ft_parsing.c\
 	  $(PATH_SRC)/moves/ft_push.c\
-	  $(PATH_SRC)/ft_moves_gestion.c\
-	  $(PATH_SRC)/ft_sort_gestion.c\
-	  $(PATH_SRC)/ft_lst_gestion.c\
+	  $(PATH_SRC)/ft_check_sort.c\
+	  $(PATH_SRC)/ft_stack_init.c\
+	  $(PATH_SRC)/ft_sort.c\
+	  $(PATH_SRC)/ft_lst_utils.c\
 	  $(PATH_SRC)/moves/ft_swap.c\
 	  $(PATH_SRC)/moves/ft_rotate.c\
 	  $(PATH_SRC)/moves/ft_reverse_rotate.c\
 	  $(PATH_SRC)/ft_quicksort.c\
-	  $(PATH_SRC)/ft_quicksort_utils.c\
+	  $(PATH_SRC)/ft_pivot.c\
 	  $(PATH_SRC)/ft_utils.c\
 	  $(PATH_SRC)/main.c\
 

@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 14:30:05 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/03/08 16:01:34 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:51:05 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 long long	ft_atoi( char *nptr)
 {
-	long long res;
-	int	sign;
-	int	i;
+	long long	res;
+	int			sign;
+	int			i;
 
 	res = 0;
 	sign = 1;

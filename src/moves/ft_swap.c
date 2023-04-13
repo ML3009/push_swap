@@ -14,7 +14,7 @@
 
 void	ft_sa(t_lst *stack_a, int i, t_vars *var)
 {
-	int	tmp;
+	int		tmp;
 	t_lst	*save;
 
 	save = stack_a;
@@ -34,7 +34,7 @@ void	ft_sa(t_lst *stack_a, int i, t_vars *var)
 
 void	ft_sb(t_lst *stack_b, int i, t_vars *var)
 {
-	int	tmp;
+	int		tmp;
 	t_lst	*save;
 
 	save = stack_b;
@@ -56,8 +56,8 @@ void	ft_ss(t_lst *stack_a, t_lst *stack_b, t_vars *var)
 {
 	if ((stack_a && stack_a->next) && (stack_b && stack_b->next))
 	{
-		ft_sa(stack_a, 0,var);
-		ft_sb(stack_b, 0,var);
+		ft_sa(stack_a, 0, var);
+		ft_sb(stack_b, 0, var);
 		ft_putstr("ss\n");
 		var->count++;
 	}

@@ -12,7 +12,7 @@
 
 #include "../../include/push_swap.h"
 
-void	ft_pb(t_lst	**stack_a, t_lst **stack_b, t_vars *var)
+void	ft_pb(t_lst **stack_a, t_lst **stack_b, t_vars *var)
 {
 	t_lst	*tmp;
 
@@ -23,14 +23,12 @@ void	ft_pb(t_lst	**stack_a, t_lst **stack_b, t_vars *var)
 		tmp = (*stack_a)->next;
 		free(*stack_a);
 		(*stack_a) = tmp;
-		//free(tmp);
-
 	}
 	var->count++;
 	ft_putstr("pb\n");
 }
 
-void	ft_pa(t_lst **stack_a, t_lst ** stack_b, t_vars *var)
+void	ft_pa(t_lst **stack_a, t_lst **stack_b, t_vars *var)
 {
 	t_lst	*tmp;
 
@@ -41,8 +39,6 @@ void	ft_pa(t_lst **stack_a, t_lst ** stack_b, t_vars *var)
 		tmp = (*stack_b)->next;
 		free(*stack_b);
 		(*stack_b) = tmp;
-		//free(tmp);
-
 	}
 	var->count++;
 	ft_putstr("pa\n");

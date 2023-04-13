@@ -71,4 +71,3 @@ int	ft_size_lst(t_lst *lst)
 	}
 	return (i);
 }
-

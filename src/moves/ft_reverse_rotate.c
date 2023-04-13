@@ -15,16 +15,16 @@
 void	ft_rra(t_lst *stack_a, int i, t_vars *var)
 {
 	t_lst	*tmp;
-	int	save;
-	int save_one;
+	int		save;
+	int		save_one;
 
 	if (stack_a && stack_a->next)
 	{
 		tmp = stack_a;
 		stack_a = ft_last_lst(stack_a);
-		save = stack_a->content; 
+		save = stack_a->content;
 		stack_a = tmp;
-		while(stack_a->next)
+		while (stack_a->next)
 		{
 			save_one = stack_a->content;
 			stack_a->content = save;
@@ -44,8 +44,8 @@ void	ft_rra(t_lst *stack_a, int i, t_vars *var)
 void	ft_rrb(t_lst *stack_b, int i, t_vars *var)
 {
 	t_lst	*tmp;
-	int	save;
-	int save_one;
+	int		save;
+	int		save_one;
 
 	if (stack_b && stack_b->next)
 	{
@@ -53,7 +53,7 @@ void	ft_rrb(t_lst *stack_b, int i, t_vars *var)
 		stack_b = ft_last_lst(stack_b);
 		save = stack_b->content;
 		stack_b = tmp;
-		while(stack_b->next)
+		while (stack_b->next)
 		{
 			save_one = stack_b->content;
 			stack_b->content = save;
@@ -70,15 +70,13 @@ void	ft_rrb(t_lst *stack_b, int i, t_vars *var)
 	}
 }
 
-
 void	ft_rrr(t_lst *stack_a, t_lst *stack_b, t_vars *var)
 {
 	if ((stack_a && stack_a->next) && (stack_b && stack_b->next))
 	{
-		ft_rra(stack_a, 0,var);
-		ft_rrb(stack_b, 0,var);
+		ft_rra(stack_a, 0, var);
+		ft_rrb(stack_b, 0, var);
 		ft_putstr("rrr\n");
 		var->count++;
 	}
-
 }
