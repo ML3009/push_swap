@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 19:24:08 by ml                #+#    #+#             */
-/*   Updated: 2023/04/13 14:42:56 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/04/14 10:07:09 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ void	ft_quicksort(t_vars *var, t_lst **stack_a,
 		t_lst **stack_b, t_lst **stack_tmp)
 {
 	var->quick = 1;
-	ft_push_all(var, stack_a, stack_b, stack_tmp, var->quick);
+	ft_push_all(var, stack_a, stack_b, stack_tmp);
 	ft_quick(stack_a, stack_b, stack_tmp, var);
 }
 
-void	ft_push_all(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp, int n)
+void	ft_push_all(t_vars *var, t_lst **stack_a, t_lst **stack_b,
+	t_lst **stack_tmp)
 {
 	int	i;
 
@@ -28,7 +29,7 @@ void	ft_push_all(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tm
 	while (i < var->size / 10)
 	{
 		if ((*stack_a)->content <= ft_get_quick((*stack_tmp),
-				var->size / 10 * n))
+				var->size / 10 * var->quick))
 		{
 			ft_pb(stack_a, stack_b, var);
 			i++;
@@ -43,7 +44,8 @@ void	ft_push_all(t_vars *var, t_lst **stack_a, t_lst **stack_b, t_lst **stack_tm
 		ft_pb(stack_a, stack_b, var);
 		return ;
 	}
-	ft_push_all(var, stack_a, stack_b, stack_tmp, n + 1);
+	var->quick++;
+	ft_push_all(var, stack_a, stack_b, stack_tmp);
 }
 
 void	ft_quick(t_lst **stack_a, t_lst **stack_b,

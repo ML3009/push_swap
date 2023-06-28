@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:34:11 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/04/13 15:20:03 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/04/14 10:38:54 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ typedef struct s_lst
 }		t_lst;
 
 /*PARSING*/
-
 int		ft_check_number(char *av);
 void	ft_int_tab(t_vars *var);
-void	ft_parsing(int ac, char **av, t_vars *var);
+void	ft_parsing(t_vars *var);
 void	ft_check_double(int	*tab, int i, t_vars *var);
+void	ft_back_up_lst(int ac, char **av, t_vars *var);
+void	ft_back_up_lst_2(char **av, t_vars *var);
 
 /*STACK CREATION*/
-
 t_lst	*ft_new_element(int content);
 t_lst	*ft_last_lst(t_lst *lst);
 void	ft_add_back_lst(t_lst **lst, t_lst *new);
@@ -66,10 +66,9 @@ void	ft_quicksort(t_vars *var, t_lst **stack_a, t_lst **stack_b,
 void	ft_quick(t_lst **stack_a, t_lst **stack_b, t_lst **stack_tmp,
 			t_vars *var);
 void	ft_push_all(t_vars *var, t_lst **stack_a, t_lst **stack_b,
-			t_lst **stack_tmp, int n);
+			t_lst **stack_tmp);
 
 /*STACK MOVES*/
-
 void	ft_sa(t_lst *stack_a, int i, t_vars *var);
 void	ft_sb(t_lst *stack_b, int i, t_vars *var);
 void	ft_ss(t_lst *stack_a, t_lst *stack_b, t_vars *var);
@@ -94,7 +93,6 @@ int		ft_check_sorting(t_lst **stack);
 int		ft_check_sorting_stack(t_lst **stack, int count);
 
 /*UTILS*/
-
 void	ft_free_lst(t_lst *stack);
 void	ft_putstr_exit(char *str);
 void	ft_free_tmp(t_vars *var, char *str);

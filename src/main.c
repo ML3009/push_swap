@@ -6,7 +6,7 @@
 /*   By: mvautrot <mvautrot@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 13:36:21 by mvautrot          #+#    #+#             */
-/*   Updated: 2023/04/13 15:25:28 by mvautrot         ###   ########.fr       */
+/*   Updated: 2023/04/14 10:23:22 by mvautrot         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ int	main(int ac, char **av)
 	stack_a = NULL;
 	stack_b = NULL;
 	stack_tmp = NULL;
-	ft_parsing(ac, av, &var);
+	var.tmp_lst = NULL;
+	var.size = 0;
+	var.ac = ac;
+	ft_back_up_lst(ac, av, &var);
+	ft_parsing(&var);
 	ft_stack_init(&var, &stack_a, &stack_tmp);
 	var.count = 0;
 	ft_sort_list(stack_tmp);
